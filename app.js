@@ -1,5 +1,5 @@
-$( document ).ready( function () {
-    let addListInput = $( '.addListWrapper input' );
+$(document).ready(function () {
+    let addListInput = $('.addListWrapper input');
     const generateId = namespace => `${namespace}-${Date.now()}-${Math.ceil(Math.random()*100)}`
     const createListString = name =>
         `<div class="list" id="${generateId('list')}">
@@ -16,30 +16,30 @@ $( document ).ready( function () {
             </div>
         </div>`
     const appendNewList = () => {
-         //  cogemos el text del input
-         let listName = addListInput.val();
+        //  cogemos el text del input
+        let listName = addListInput.val();
 
-         // creamos el nodo .list
-         let list = $( createListString( listName ) );
+        // creamos el nodo .list
+        let list = $(createListString(listName));
 
-         // añadimos el node al DOM
-         $( '.lists' ).append( list )
+        // añadimos el node al DOM
+        $('.lists').append(list)
 
-         // Limpiamos el texto del input
-         addListInput.val( '' );
+        // Limpiamos el texto del input
+        addListInput.val('');
     }
 
 
     // Listeners
-     addListInput.on( 'keyup', function ( event ) {
-        if ( event.keyCode === 13 ) {
-           appendNewList();
+    addListInput.on('keyup', function (event) {
+        if (event.keyCode === 13) {
+            appendNewList();
         }
-    } )
+    })
 
-     $('.lists').on('click', '.listHeader button', function(event) {
+    $('.lists').on('click', '.listHeader button', function (event) {
         let listNode = $(event.target.parentNode.parentNode);
         listNode.detach();
-     })
+    })
 
-} )
+})
