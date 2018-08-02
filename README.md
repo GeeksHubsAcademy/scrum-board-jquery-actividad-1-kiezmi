@@ -6,8 +6,8 @@ La misión del app es poder gestionar la metodología scrum. De modo que tengamo
 
 ## BackLog
 
-- [ ] Layout responsive con flexbox
-- [ ] Mejorar el estilo del boceto
+- [X] Layout responsive con flexbox
+- [X] Mejorar el estilo del boceto
 - [x] Añadir listas nuevas
 - [x] Borrar listas
 - [ ] Añadir tareas a las listas
