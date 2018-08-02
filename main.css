@@ -1,3 +1,51 @@
-header{
-    display: flex,
+header {
+    display: block;
+    width: 100vh;
+    min-height: 3em;
+    text-align: right;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-weight: 400;
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+body {
+    display: block;
+    background: coral;
+}
+
+section {
+    
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.list {
+    margin: 1%;
+    background: orangered;
+    color: forestgreen;
 }
