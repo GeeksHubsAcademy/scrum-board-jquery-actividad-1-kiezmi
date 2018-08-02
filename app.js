@@ -1,3 +1,6 @@
+/////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////Listas////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 $(document).ready(function () {
     let addListInput = $('.addListWrapper input');
     let addListButton = $('.addListWrapper button');
@@ -34,16 +37,71 @@ $(document).ready(function () {
         // Limpiamos el texto del input
         addListInput.val('');
     }
-        // Listeners
+    // Listeners
     addListInput.on('keyup', function (event) {
         if (event.keyCode === 13) {
             appendNewList();
         }
-    })
-   
+    });
+
+    addListButton.on('click', function () {
+        appendNewList();
+    });
+
     $('.lists').on('click', '.listHeader', function (event) {
         let listNode = $(event.target.parentNode.parentNode);
         listNode.detach();
     })
+    ///////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////Tareas//////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////
+
+    let addTaskInput = $('.addTask input');
+    let addTaskButton = $('.addTask button');
+
+    const createTaskString = name =>
+        `<div class="task">
+
+            <h5>${name}</h5>
+            <button type="button" class="close">X</button>
+            </div>`
+
+    const appendNewTask = () => {
+        //  cogemos el text del input si no esta vacio y le quitamos 
+        //los espacios por la parte de la derecha.
+        if (addTaskInput.val() === '') {
+            return;
+        }
+        let taskName = addTaskInput.val().trim();
+
+        // creamos el nodo .task
+        let task = $(createTaskString(taskName));
+
+        // añadimos el node al DOM
+        $('.tasks').append(task);
+
+        // Limpiamos el texto del input
+        addTaskInput.val('');
+    }
+    // Listeners
+    addTaskInput.on('keyup', function (event) {
+        if (event.keyCode === 13) {
+            appendNewTask();
+        }
+    });
+
+    addTaskButton.on('click', function () {
+        appendNewTask();
+    });
+
+    $('.tasks').on('click', '.addTask', function (event) {
+        let taskNode = $(event.target.parentNode.parentNode);
+    
+        taskNode.detach();
+    })
+
+
+
+
 
 })

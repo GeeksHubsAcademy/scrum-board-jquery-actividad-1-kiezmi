@@ -6,9 +6,9 @@ header {
 
 .addListWrapper {
     /* display: flex;
-    justify-content: center; */
+    justify-content: right;
+    flex-direction: row-reverse */
     text-align: right;
-    
 }
 
 input[type="submit"],
