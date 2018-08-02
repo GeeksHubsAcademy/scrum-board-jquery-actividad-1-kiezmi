@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////Listas////////////////////////////////////////
+////////////////////////////////  Listas  //////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 $(document).ready(function () {
     let addListInput = $('.addListWrapper input');
@@ -53,7 +53,7 @@ $(document).ready(function () {
         listNode.detach();
     })
     ///////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////Tareas//////////////////////////////////////////
+    ///////////////////////////////   Tareas   ///////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////
 
     let addTaskInput = $('.addTask input');
@@ -61,9 +61,10 @@ $(document).ready(function () {
 
     const createTaskString = name =>
         `<div class="task">
-
+        <div class="taskHeader">
             <h5>${name}</h5>
             <button type="button" class="close">X</button>
+            </div>
             </div>`
 
     const appendNewTask = () => {
@@ -94,14 +95,11 @@ $(document).ready(function () {
         appendNewTask();
     });
 
-    $('.tasks').on('click', '.addTask', function (event) {
+    $('.tasks').on('click', '.taskHeader', function (event) {
         let taskNode = $(event.target.parentNode.parentNode);
-    
+
         taskNode.detach();
     })
-
-
-
 
 
 })

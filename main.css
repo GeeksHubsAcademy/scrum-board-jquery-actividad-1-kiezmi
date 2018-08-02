@@ -61,3 +61,8 @@ section {
     background: rgb(80, 212, 80);
     color: rgb(3, 19, 3);
 }
+
+.task {
+    background-color: green;
+    color: aqua;
+}
