@@ -2,7 +2,13 @@ header {
     display: block;
     width: 100vh;
     min-height: 3em;
+}
+
+.addListWrapper {
+    /* display: flex;
+    justify-content: center; */
     text-align: right;
+    
 }
 
 input[type="submit"],
@@ -21,7 +27,7 @@ button,
     border-radius: 4px;
     border: 0;
     cursor: pointer;
-    /* display: inline-block; */
+    display: inline-block;
     font-weight: 400;
     height: 2em;
     line-height: 2em;
@@ -33,19 +39,25 @@ button,
 
 body {
     display: block;
-    background: coral;
+    background-image: url(./fondo.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: 0;
+    height: 100vH;
+    position: relative;
+    overflow: hidden;
 }
 
 section {
-    
+    justify-content: center;
     color: white;
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 .list {
     margin: 1%;
-    background: orangered;
-    color: forestgreen;
+    background: rgb(80, 212, 80);
+    color: rgb(3, 19, 3);
 }
