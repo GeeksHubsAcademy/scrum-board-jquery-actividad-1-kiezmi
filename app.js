@@ -23,10 +23,10 @@ $(document).ready(function () {
     const appendNewList = () => {
         //  cogemos el text del input si no esta vacio y le quitamos 
         //los espacios por la parte de la derecha.
-        if (addListInput.val() === '') {
-            return;
+        if (addListInput.val().trim() === '') {
+            return addListInput.val('');
         }
-        let listName = addListInput.val().trim();
+        let listName = addListInput.val();
 
         // creamos el nodo .list
         let list = $(createListString(listName));
@@ -70,10 +70,10 @@ $(document).ready(function () {
     const appendNewTask = () => {
         //  cogemos el text del input si no esta vacio y le quitamos 
         //los espacios por la parte de la derecha.
-        if (addTaskInput.val() === '') {
+        if (addTaskInput.val().trim() === '') {
             return;
         }
-        let taskName = addTaskInput.val().trim();
+        let taskName = addTaskInput.val();
 
         // creamos el nodo .task
         let task = $(createTaskString(taskName));
