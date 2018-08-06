@@ -9,14 +9,16 @@ $(document).ready(function () {
         `<div class="list" id="${generateId('list')}">
             <div class="listHeader">
                 <h4>${name}</h4>
-                <button type="button" class="close">X</button>
+                <button type="button">X</button>
             </div>
-            <div class="tasks">
-               
-            </div>
+            
             <div class="addTask">
                 <input type="text">
-                <button type="button" class="suma">Add task</button>
+                <button type="button">Add task</button>
+            </div>
+
+            <div class="tasks">
+               
             </div>
         </div>`
 
@@ -61,11 +63,11 @@ $(document).ready(function () {
 
     const createTaskString = name =>
         `<div class="task">
-        <div class="taskHeader">
-            <h5>${name}</h5>
-            <button type="button" class="close">X</button>
+            <div class="taskbody">
+                <h6>${name}</h6>
+                <button type="button">X</button>
             </div>
-            </div>`
+        </div>`
 
     const appendNewTask = () => {
         //  cogemos el text del input si no esta vacio y le quitamos 
@@ -85,17 +87,17 @@ $(document).ready(function () {
         addTaskInput.val('');
     }
     // Listeners
-    addTaskInput.on('keyup', function (event) {
+    $(document).on('keyup', '.addTask input', function (event) {
         if (event.keyCode === 13) {
             appendNewTask();
         }
     });
 
-    addTaskButton.on('click', function () {
+    $(document).on('click', '.addTask button ', function () {
         appendNewTask();
     });
 
-    $('.tasks').on('click', '.taskHeader', function (event) {
+    $(document).on('click', '.taskbody button', function (event) {
         let taskNode = $(event.target.parentNode.parentNode);
 
         taskNode.detach();
