@@ -57,6 +57,7 @@ section {
 }
 
 .list {
+    padding: 1em;
     margin: 1%;
     background: rgb(80, 212, 80);
     color: rgb(3, 19, 3);

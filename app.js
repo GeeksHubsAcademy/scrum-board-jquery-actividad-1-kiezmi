@@ -81,7 +81,7 @@ $(document).ready(function () {
         let task = $(createTaskString(taskName));
 
         // añadimos el node al DOM
-        e.target.parentNode.parentNode.queryselector('.tasks').append(task);
+        e.target.parentNode.parentNode.queryselector('.tasks').append('task');
         // Limpiamos el texto del input
         addTaskInput.val('');
     }
