@@ -69,7 +69,7 @@ $(document).ready(function () {
             </div>
         </div>`
 
-    const appendNewTask = () => {
+    const appendNewTask = (e) => {
         //  cogemos el text del input si no esta vacio y le quitamos 
         //los espacios por la parte de la derecha.
         if (addTaskInput.val().trim() === '') {
@@ -81,38 +81,20 @@ $(document).ready(function () {
         let task = $(createTaskString(taskName));
 
         // añadimos el node al DOM
-        $('.tasks').append(task);
-
+        e.target.parentNode.parentNode.queryselector('.tasks').append(task);
         // Limpiamos el texto del input
         addTaskInput.val('');
     }
     // Listeners
 
-    addListInput.on('keyup', '.addTask input', function (event) {
+    $(document).on('keyup', '.addTask input', function (event) {
         if (event.keyCode === 13) {
-            appendNewTask();
+            appendNewTask(event);
         }
     });
 
-    addTaskButton.on('click', '.addTask button ', function () {
-        appendNewTask();
-    });
-
-    $('.tasks').on('click', '.taskbody button', function (event) {
-        let taskNode = $(event.target.parentNode.parentNode);
-
-        taskNode.detach();
-    })
-
-
-    /* $(document).on('keyup', '.addTask input', function (event) {
-        if (event.keyCode === 13) {
-            appendNewTask();
-        }
-    });
-
-    $(document).on('click', '.addTask button ', function () {
-        appendNewTask();
+    $(document).on('click', '.addTask button ', function (e) {
+        appendNewTask(e);
     });
 
     $(document).on('click', '.taskbody button', function (event) {
@@ -120,6 +102,5 @@ $(document).ready(function () {
 
         taskNode.detach();
     })
- */
 
 })
