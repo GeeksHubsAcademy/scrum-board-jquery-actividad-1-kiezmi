@@ -87,7 +87,25 @@ $(document).ready(function () {
         addTaskInput.val('');
     }
     // Listeners
-    $(document).on('keyup', '.addTask input', function (event) {
+
+    addListInput.on('keyup', '.addTask input', function (event) {
+        if (event.keyCode === 13) {
+            appendNewTask();
+        }
+    });
+
+    addTaskButton.on('click', '.addTask button ', function () {
+        appendNewTask();
+    });
+
+    $('.tasks').on('click', '.taskbody button', function (event) {
+        let taskNode = $(event.target.parentNode.parentNode);
+
+        taskNode.detach();
+    })
+
+
+    /* $(document).on('keyup', '.addTask input', function (event) {
         if (event.keyCode === 13) {
             appendNewTask();
         }
@@ -102,6 +120,6 @@ $(document).ready(function () {
 
         taskNode.detach();
     })
-
+ */
 
 })
