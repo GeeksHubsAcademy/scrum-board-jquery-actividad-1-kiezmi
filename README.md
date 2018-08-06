@@ -16,7 +16,6 @@ La misión del app es poder gestionar la metodología scrum. De modo que tengamo
 Opcional:
 
 - [ ] Marcar tarea como completada
-- [ ] Borrar tareas 
 - [ ] Editar texto de la tarea.
 - [ ] Cambiar el color de las tareas individualmente (Se debe buscar un plugin de terceros de color-picker)
 - [ ] Guardar el estado en localStorage
