@@ -10,13 +10,13 @@ La misión del app es poder gestionar la metodología scrum. De modo que tengamo
 - [X] Mejorar el estilo del boceto
 - [x] Añadir listas nuevas
 - [x] Borrar listas
-- [ ] Añadir tareas a las listas /Impoortante
-- [ ] Borrar tareas /Impoortante
+- [X] Añadir tareas a las listas /Impoortante
+- [X] Borrar tareas /Impoortante
 
 Opcional:
 
 - [ ] Marcar tarea como completada
-- [ ] Editar texto de la tarea.
+- [X] Editar texto de la tarea.
 - [ ] Cambiar el color de las tareas individualmente (Se debe buscar un plugin de terceros de color-picker)
 - [ ] Guardar el estado en localStorage
 

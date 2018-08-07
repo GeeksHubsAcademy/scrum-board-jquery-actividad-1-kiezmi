@@ -8,8 +8,9 @@
       const createListString = name =>
           `<div class="list" id="${generateId('list')}">
             <div class="listHeader">
-                <h4>${name}</h4>
-                <button type="button">X</button>
+            <button type="button">X</button>   
+            <h4>${name}</h4>
+               
             </div>
             
             <div class="addTask">
@@ -50,7 +51,7 @@
           appendNewList();
       });
 
-      $('.lists').on('click', '.listHeader', function (event) {
+      $('.lists').on('click', '.listHeader button', function (event) {
           let listNode = $(event.target.parentNode.parentNode);
           listNode.detach();
       })
@@ -60,9 +61,9 @@
 
       const createTaskString = name =>
           `<div class="task">
-            <div class="showTask">
-                <h6>${name}</h6>
+            <div class="showTask" contenteditable="true" spellcheck="false">
                 <button type="button">X</button>
+                ${name}
             </div>
         </div>`
 
@@ -70,7 +71,7 @@
           console.log("inicio", e.target.value);
           //  cogemos el text del input si no esta vacio y le quitamos 
           //los espacios por la parte de la derecha.
-          let addTaskInput = e.target;
+          let addTaskInput = e.target.parentNode.querySelector('input');
           if (addTaskInput.value.trim() === '') {
               return;
           }
@@ -81,9 +82,8 @@
           let task = $(createTaskString(taskName));
           console.log(task);
           // añadimos el node al DOM
-          let parent = $(e.target.parentNode.parentNode).find('.tasks').append(task);
-          console.log(parent);
-          parent;
+          $(e.target.parentNode.parentNode).find('.tasks').append(task);
+        
           // Limpiamos el texto del input
           addTaskInput.value = '';
       }
