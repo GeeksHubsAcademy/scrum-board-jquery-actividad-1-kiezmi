@@ -9,7 +9,14 @@ header {
     justify-content: right;
     flex-direction: row-reverse */
     text-align: right;
+
 }
+.addListWrapper input {
+flex:1;
+    }
+    .addListWrapper button {
+flex:0;
+    }
 
 input[type="submit"], input[type="reset"], input[type="button"], button, .button {
     -moz-appearance: none;
